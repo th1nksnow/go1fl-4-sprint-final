@@ -57,7 +57,7 @@ func meanSpeed(steps int, height float64, duration time.Duration) float64 {
 
 	distance := distance(steps, height)
 
-	return distance * duration.Hours()
+	return distance / duration.Hours()
 }
 
 func TrainingInfo(data string, weight, height float64) (string, error) {
