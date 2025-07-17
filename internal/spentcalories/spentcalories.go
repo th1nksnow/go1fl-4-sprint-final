@@ -76,7 +76,7 @@ func TrainingInfo(data string, weight, height float64) (string, error) {
 			return "", err
 		}
 		outputFormat := "Тип тренировки: %s\nДлительность: %.2f ч.\nДистанция: %.2f км.\nСкорость: %.2f км/ч\nСожгли калорий: %.2f\n"
-		output := fmt.Sprintf(outputFormat, trainingType, walkingTime, distance, meanSpeed, spentCalories)
+		output := fmt.Sprintf(outputFormat, trainingType, walkingTime.Hours(), distance, meanSpeed, spentCalories)
 
 		return output, nil
 	case "Ходьба":
@@ -86,7 +86,7 @@ func TrainingInfo(data string, weight, height float64) (string, error) {
 			return "", err
 		}
 		outputFormat := "Тип тренировки: %s\nДлительность: %.2f ч.\nДистанция: %.2f км.\nСкорость: %.2f км/ч\nСожгли калорий: %.2f\n"
-		output := fmt.Sprintf(outputFormat, trainingType, walkingTime, distance, meanSpeed, spentCalories)
+		output := fmt.Sprintf(outputFormat, trainingType, walkingTime.Hours(), distance, meanSpeed, spentCalories)
 
 		return output, nil
 	default:
