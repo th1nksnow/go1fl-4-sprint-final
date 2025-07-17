@@ -31,7 +31,7 @@ func parseTraining(data string) (int, string, time.Duration, error) {
 		return 0, "", 0, fmt.Errorf("количество шагов должно быть больше 0")
 	}
 
-	walkingTime, err := time.ParseDuration(parsedData[1])
+	walkingTime, err := time.ParseDuration(parsedData[2])
 	if err != nil {
 		return 0, "", 0, err
 	} else if walkingTime <= 0 {
@@ -48,6 +48,7 @@ func distance(steps int, height float64) float64 {
 
 	return distance
 }
+
 func meanSpeed(steps int, height float64, duration time.Duration) float64 {
 
 	if duration <= 0 {
